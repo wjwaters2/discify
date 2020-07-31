@@ -1,4 +1,3 @@
 package org.drunkuncle.discify.model
 
-class Artist {
-}
+data class Artist(var name: String)

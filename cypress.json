@@ -1,0 +1,7 @@
+{
+  "integrationFolder": "src/test/cypress",
+  "baseUrl": "http://localhost:8080",
+  "video": false,
+  "videosFolder": "out/videos",
+  "chromeWebSecurity": false
+}

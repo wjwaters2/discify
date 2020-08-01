@@ -1,0 +1,9 @@
+body {
+    background-image: url("../img/records.jpg");
+    background-color: #cccccc;
+}
+
+div, span, h1, h2 {
+    background: beige;
+    max-width: 500px;
+}

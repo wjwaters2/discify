@@ -1,11 +1,36 @@
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="${@mvcResourceUrlProvider.getForLookupPath('/css/app.css')}">
     <title>Discify</title>
 </head>
 
 <body id="discify-body">
+<input type="hidden" id="albumId" th:value="${spotifyData.id}">
+<div th:each="artist: ${spotifyData.artists}">
+    <h1 id="name">[[${artist.name}]]</h1>
+</div>
+<h2 id="title">[[${spotifyData.name}]]</h2>
+<div th:each="track: ${spotifyData.tracks.items}">
+    <span id="track-number" th:text="${track.track_number}"></span>.
+    <span id="track-name" th:text="${track.name}"></span>
+    <div th:each="artist: ${track.artists}">Performed By:
+        <span id="featured-artist" th:text="${artist.name}"></span>
+    </div>Duration:
+    <span id="duration" th:text="${track.duration_ms}/60000"></span>
+    <br>
+    <br>
+    <br>
+</div>
+<br>
+<div id="label">Label: [[${spotifyData.label}]]</div>
+<div id="release-date">Release Date: [[${spotifyData.release_date}]]</div>
+<br>
+<br>
+<br>
+<button id="navigation-button" onclick="window.location.href='https://www.google.com';">Add Discogs Release</button>
 </body>
 </html>

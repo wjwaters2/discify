@@ -16,3 +16,8 @@
 *.iml
 *.ipr
 
+#data files
+/src/test/resources/dataFiles/
+
+#cypress
+/cypress/
